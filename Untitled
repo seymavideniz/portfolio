@@ -1,0 +1,5 @@
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;  /* Sol taraf: 1.5 birim, Sağ taraf: 1 birim */
+    gap: 1.5rem;
+}
