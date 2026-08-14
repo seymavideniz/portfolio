@@ -1538,4 +1538,117 @@ section:nth-child(even) {
         height: 150px;
         margin: 0 auto;
     }
+}
+
+/* Legal pages */
+body.legal-page {
+    scroll-snap-type: none;
+}
+
+body.legal-page section,
+body.legal-page main {
+    scroll-snap-align: none;
+}
+
+.legal {
+    padding: 140px 20px 80px;
+}
+
+.legal-wrap {
+    max-width: 760px;
+}
+
+.legal-kicker {
+    font-size: 0.8rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 0.75rem;
+}
+
+.legal-title {
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin-bottom: 0.6rem;
+}
+
+.legal-meta {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.legal-switch {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+}
+
+.legal-switch a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    transition: var(--transition);
+}
+
+.legal-switch a:hover,
+.legal-switch a[aria-current="page"] {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.legal-body {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 1.02rem;
+    line-height: 1.75;
+}
+
+.legal-body h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 2.2rem 0 0.8rem;
+}
+
+.legal-body h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 1.4rem 0 0.55rem;
+}
+
+.legal-body p {
+    margin-bottom: 1rem;
+}
+
+.legal-body ul {
+    margin: 0 0 1.1rem 1.15rem;
+}
+
+.legal-body li {
+    margin-bottom: 0.4rem;
+}
+
+.legal-body a {
+    color: #c7d2fe;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.legal-body a:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .legal {
+        padding: 120px 20px 60px;
+    }
 } 

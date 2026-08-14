@@ -60,30 +60,33 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Smooth scroll momentum - ağır çekim efekti
+const isLegalPage = document.body.classList.contains('legal-page');
 let isScrolling = false;
 let scrollTimeout;
 
-window.addEventListener('wheel', (e) => {
-  e.preventDefault();
-  
-  if (!isScrolling) {
-    isScrolling = true;
-  }
-  
-  clearTimeout(scrollTimeout);
-  
-  // Scroll hızını yavaşlatıyoruz (0.65 faktörü ile - biraz daha hızlı)
-  const delta = e.deltaY * 0.65;
-  
-  window.scrollBy({
-    top: delta,
-    behavior: 'auto'
-  });
-  
-  scrollTimeout = setTimeout(() => {
-    isScrolling = false;
-  }, 100);
-}, { passive: false });
+if (!isLegalPage) {
+  window.addEventListener('wheel', (e) => {
+    e.preventDefault();
+
+    if (!isScrolling) {
+      isScrolling = true;
+    }
+
+    clearTimeout(scrollTimeout);
+
+    // Scroll hızını yavaşlatıyoruz (0.65 faktörü ile - biraz daha hızlı)
+    const delta = e.deltaY * 0.65;
+
+    window.scrollBy({
+      top: delta,
+      behavior: 'auto'
+    });
+
+    scrollTimeout = setTimeout(() => {
+      isScrolling = false;
+    }, 100);
+  }, { passive: false });
+}
 
 // Navbar background on scroll (glass effect)
 window.addEventListener('scroll', () => {
